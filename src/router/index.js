@@ -56,36 +56,37 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/status',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Details', icon: 'example' },
+    redirect: '/status',
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Proxy', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Pattern', icon: 'table' }
+        path: 'status',
+        name: 'Status',
+        component: () => import('@/views/status/index'),
+        meta: { title: 'Status', icon: 'chart' }
       }
     ]
   },
 
   {
-    path: '/form',
+    path: '/details',
     component: Layout,
+    redirect: '/details/proxy',
+    name: 'Details',
+    meta: { title: 'Details', icon: 'table' },
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'New Pattern', icon: 'form' }
+        path: 'proxy',
+        name: 'Proxy',
+        component: () => import('@/views/proxy/index'),
+        meta: { title: 'Proxy', icon: 'table' }
+      },
+      {
+        path: 'pattern',
+        name: 'Pattern',
+        component: () => import('@/views/pattern/index'),
+        meta: { title: 'Pattern', icon: 'table' }
       }
     ]
   },
@@ -96,7 +97,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'https://github.com/worldwonderer/proxy-for-spiders',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: 'Github', icon: 'link' }
       }
     ]
   },

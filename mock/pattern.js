@@ -10,7 +10,7 @@ const data = Mock.mock({
 
 export default [
   {
-    url: '/patterns',
+    url: '/pattern',
     type: 'get',
     response: config => {
       const items = data.items

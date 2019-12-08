@@ -7,3 +7,19 @@ export function getList(params) {
     params
   })
 }
+
+export function insertOne(data) {
+  return request({
+    url: '/pattern',
+    method: 'post',
+    data
+  })
+}
+
+export function deleteOne(data) {
+  return request({
+    url: '/pattern',
+    method: 'delete',
+    data
+  })
+}
