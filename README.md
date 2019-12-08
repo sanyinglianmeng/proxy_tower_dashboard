@@ -16,9 +16,9 @@
 3. 启动 `npm run dev`
 
 ## demo
-![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/status.png)
-
 ![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/pattern.png)
 
 ![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/proxy.png)
+
+![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/status.png)
 
