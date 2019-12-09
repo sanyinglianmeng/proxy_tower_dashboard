@@ -1,6 +1,6 @@
-# proxy-for-spiders-dashboard
+# proxy_tower_dashboard
 
-配合proxy-for-spiders使用的前端界面，基于vue-admin-template
+配合proxy_tower使用的前端界面，基于vue-admin-template
 
 ## 特性
 * 各pattern成功率的折线表
@@ -16,9 +16,9 @@
 3. 启动 `npm run dev`
 
 ## demo
-![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/pattern.png)
+![Image](https://raw.githubusercontent.com/worldwonderer/proxy_tower_dashboard/master/docs/pattern.png)
 
-![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/proxy.png)
+![Image](https://raw.githubusercontent.com/worldwonderer/proxy_tower_dashboard/master/docs/proxy.png)
 
-![Image](https://raw.githubusercontent.com/worldwonderer/proxy-for-spiders-dashboard/master/docs/status.png)
+![Image](https://raw.githubusercontent.com/worldwonderer/proxy_tower_dashboard/master/docs/status.png)
 
