@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       chart: null,
-      series: [],
+      series: []
     }
   },
   mounted() {
@@ -62,25 +62,25 @@ export default {
           },
           left: '1%'
         },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            lineStyle: {
-              color: '#57617B'
-            }
-          }
-        },
         legend: {
           top: 20,
           icon: 'rect',
           itemWidth: 14,
           itemHeight: 5,
           itemGap: 13,
-          data: ['Total'],
+          data: [],
           right: '4%',
           textStyle: {
             fontSize: 12,
             color: '#F1F1F3'
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            lineStyle: {
+              color: '#57617B'
+            }
           }
         },
         grid: {
@@ -126,9 +126,9 @@ export default {
         series: []
       })
     },
-    Serial(color) {
+    Serial(name, color, data) {
       return {
-        name: '',
+        name: name,
         type: 'line',
         smooth: true,
         symbol: 'circle',
@@ -160,7 +160,7 @@ export default {
 
           }
         },
-        data: []
+        data: data
       }
     },
     randomRgb() {
@@ -177,12 +177,13 @@ export default {
     fetchData() {
       const newOptions = this.chart.getOption()
       getChartData().then(response => {
-        newOptions.xAxis[0].data = response.data.items.x
+        newOptions.xAxis[0].data = response.data.x
         for (const k in response.data.items) {
           const color = this.randomRgb()
-          const itemLine = this.Serial(color)
-          itemLine.name = response.data.items[k].pattern
-          itemLine.data = response.data.items[k].serial
+          const name = response.data.items[k].pattern
+          const data = response.data.items[k].serial
+          const itemLine = this.Serial(name, color, data)
+          newOptions.legend[0].data.push(name)
           this.series.push(itemLine)
         }
         newOptions.series = this.series

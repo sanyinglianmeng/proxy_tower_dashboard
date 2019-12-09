@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'proxy_tower Dashboard',
 
   /**
    * @type {boolean} true | false
