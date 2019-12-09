@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">Welcome to proxy-for-spiders dashboard!</div>
+    <div class="dashboard-text">Welcome to proxy_tower dashboard!</div>
   </div>
 </template>
 
