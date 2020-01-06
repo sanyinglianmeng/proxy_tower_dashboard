@@ -92,6 +92,20 @@ export const constantRoutes = [
   },
 
   {
+    path: '/settings',
+    component: Layout,
+    redirect: '/settings',
+    children: [
+      {
+        path: 'settings',
+        name: 'Settings',
+        component: () => import('@/views/settings/index'),
+        meta: { title: 'Settings', icon: 'edit' }
+      }
+    ]
+  },
+
+  {
     path: 'external-link',
     component: Layout,
     children: [
