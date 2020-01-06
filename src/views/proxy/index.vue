@@ -13,6 +13,11 @@
           {{ scope.row.tag }}
         </template>
       </el-table-column>
+      <el-table-column align="center" label="paid" width="150">
+        <template slot-scope="scope">
+          {{ scope.row.paid }}
+        </template>
+      </el-table-column>
       <el-table-column align="center" label="ip" width="200">
         <template slot-scope="scope">
           {{ scope.row.ip }}
@@ -48,6 +53,7 @@
           {{ scope.row.score }}
         </template>
       </el-table-column>
+
     </el-table>
   </div>
 </template>

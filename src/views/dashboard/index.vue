@@ -1,17 +1,26 @@
 <template>
-  <div class="dashboard-container">
-    <div class="dashboard-text">Welcome to proxy_tower dashboard!</div>
+  <div class="dashboard-editor-container">
+
+    <panel-group />
+
   </div>
 </template>
 
-<style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
+<script>
+import PanelGroup from './components/PanelGroup'
+
+export default {
+  name: 'DashboardAdmin',
+  components: {
+    PanelGroup
   }
 }
+</script>
+
+<style lang="scss" scoped>
+  .dashboard-editor-container {
+    padding: 32px;
+    background-color: rgb(240, 242, 245);
+    position: relative;
+  }
 </style>
