@@ -7,3 +7,11 @@ export function getList(params) {
     params
   })
 }
+
+export function cleanAll(params) {
+  return request({
+    url: '/proxies',
+    method: 'delete',
+    params
+  })
+}

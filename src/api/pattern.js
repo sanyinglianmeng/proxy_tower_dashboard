@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-export function getList(params) {
+export function getPatternList(params) {
   return request({
     url: '/patterns',
     method: 'get',

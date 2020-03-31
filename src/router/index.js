@@ -110,7 +110,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://github.com/worldwonderer/proxy-for-spiders',
+        path: 'https://github.com/worldwonderer/proxy_tower',
         meta: { title: 'Github', icon: 'link' }
       }
     ]

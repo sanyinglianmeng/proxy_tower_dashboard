@@ -1,5 +1,16 @@
 <template>
   <div class="app-container">
+    <div class="filter-container">
+      <el-select v-model="listQuery.pattern" placeholder="choose pattern" clearable style="width: 300px" class="filter-item">
+        <el-option v-for="item in patternList" :key="item" :label="item" :value="item" />
+      </el-select>
+      <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="handleFilter">
+        Query
+      </el-button>
+      <el-button class="filter-item" style="margin-bottom: 10px;" type="primary" icon="el-icon-delete" @click="handleClean">
+        Clean
+      </el-button>
+    </div>
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -59,7 +70,8 @@
 </template>
 
 <script>
-import { getList } from '@/api/proxy'
+import { getList, cleanAll } from '@/api/proxy'
+import { getPatternList } from '@/api/pattern'
 import { formatDate } from '@/utils/date'
 
 export default {
@@ -72,19 +84,37 @@ export default {
   data() {
     return {
       list: null,
-      listLoading: true
+      listLoading: true,
+      patternList: null,
+      listQuery: {
+        pattern: undefined
+      }
     }
   },
   created() {
     this.fetchData()
+    this.loadPattern()
   },
   methods: {
     fetchData() {
       this.listLoading = true
-      getList().then(response => {
+      getList(this.listQuery).then(response => {
         this.list = response.data.items
         this.listLoading = false
       })
+    },
+    loadPattern() {
+      getPatternList().then(response => {
+        this.patternList = response.data.items.map(current => current.pattern)
+      })
+    },
+    handleClean() {
+      cleanAll(this.listQuery).then(response => {
+        this.fetchData()
+      })
+    },
+    handleFilter() {
+      this.fetchData()
     }
   }
 }

@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { getList, insertOne, deleteOne } from '@/api/pattern'
+import { getPatternList, insertOne, deleteOne } from '@/api/pattern'
 
 export default {
   data() {
@@ -95,7 +95,7 @@ export default {
   methods: {
     fetchData() {
       this.listLoading = true
-      getList().then(response => {
+      getPatternList().then(response => {
         this.list = response.data.items
         this.listLoading = false
       })
